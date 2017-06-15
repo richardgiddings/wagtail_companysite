@@ -3,9 +3,10 @@
 <header class="col12">
     <h1>{{ page.introduction }}</h1>
 </header>
-<section class="row">
+<section class="row background-full">
     {% for case_study in page.get_children %}
-    <article class="col4">
+    {% if forloop.counter|divisibleby:4 %}</section><section class="row">{% endif %}
+    <article class="col-4">
         <div class="image">
             <a href="{% pageurl case_study %}">{% image case_study.specific.main_image fill-400x300 %}</a>
             <h3>{{ case_study.title }}</h3>

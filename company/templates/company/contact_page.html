@@ -5,23 +5,11 @@
 <section class="row">
     {% for contact in page.contacts.all %}
     {% if forloop.counter|divisibleby:4 %}</section><section class="row">{% endif %}
-    <article class="col-4", style="background-color: gray">
-        <div class="contact">
-            <p>{{ contact.name }}</p>
-            <p>{{ contact.address|richtext }}</p>
-            <p>{{ contact.phone }}</p>
-            <p>{{ contact.email }}</p>
-        </div>
+    <article class="col-4 contact">
+        <p>{{ contact.name }}</p>
+        <p><address>{{ contact.address|richtext }}</address></p>
+        <p>{{ contact.phone }}</p>
+        <p><a href="mailto:{{ contact.email }}" class="email">Email</a></p>
     </article>
     {% endfor %}
-    <article class="col-4", style="background-color: gray">
-        <div class="contact">
-            &nbsp;
-        </div>
-    </article>
-    <article class="col-4", style="background-color: gray">
-        <div class="contact">
-            &nbsp;
-        </div>
-    </article>
 </section>

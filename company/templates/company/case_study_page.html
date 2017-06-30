@@ -1,1 +1,21 @@
-Case study page
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<header>    
+    <h1>{{ page.title }}</h1>
+</header>
+<section class="row">
+    <article>
+        <div class="visit">
+            <a class="visit-button" href="{{ page.site_url }}">Visit site&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </div>
+        {% for block in page.body %}
+            {% if block.block_type == 'heading' %}
+                <h2>{% include_block block %}</h2>
+            {% elif block.block_type == 'image' %}
+                {% image block.value fill-600x400 %}
+            {% else %}
+                {% include_block block %}
+            {% endif %}
+        {% endfor %}
+    </article>
+</section>

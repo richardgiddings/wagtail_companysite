@@ -66,8 +66,36 @@ footer {
 /**********************************
     Contact details
 */
+
 .contact {
     text-align: center;
+    padding: 10px 20px 10px 20px;
+}
+
+a.email {
+    color: black;
+    text-decoration: none;    
+}
+a.email:hover {
+    color: #fd5938;
+}
+
+/**********************************
+    Work page
+*/
+.visit .visit-button {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    background-color: #fd5938;
+    padding: 10px 20px 10px 20px;
+    border-radius: 4px;
+}
+.visit {
+    margin-bottom: 20px;
+}
+.visit a:hover {
+    background-color: #23b0b0; 
 }
 
 /**********************************

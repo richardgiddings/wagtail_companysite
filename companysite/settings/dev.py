@@ -11,7 +11,7 @@ SECRET_KEY = '&d&*56(ovxo6zjilno_ixu(u18luu^9+r#xb9wauj)tebf!%=^'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = ['192.168.0.4']
+ALLOWED_HOSTS = ['*']
 
 try:
     from .local import *

@@ -1,1 +1,14 @@
-team page
+{% load wagtailimages_tags %}
+
+<header class="col-12">
+    <h1>{{ page.introduction }}</h1>
+</header>
+<section class="row">
+    {% for profile in page.profiles.all %}
+    <article>
+        <a href="">{% image profile.image fill-200x150 %}</a>
+        <p>{{ profile.first_name }}&nbsp;{{ profile.last_name }}</p>
+        <p>{{ profile.job_title }}</p>
+    </article>
+    {% endfor %}
+</section>

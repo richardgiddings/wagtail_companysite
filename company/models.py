@@ -102,6 +102,7 @@ class Profile(Orderable):
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+    job_title = models.CharField(max_length=30)
     image = models.ForeignKey(
         'wagtailimages.Image', null=True, blank=True,
         on_delete=models.SET_NULL, related_name='+'
@@ -116,6 +117,7 @@ class Profile(Orderable):
             ],
             heading='Name'
         ),
+        FieldPanel('job_title'),
         ImageChooserPanel('image'),
         FieldPanel('short_bio')
     ]

@@ -99,6 +99,65 @@ a.email:hover {
 }
 
 /**********************************
+    Job page
+*/
+.job {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: green;
+    background-image: url("/static/images/bo-play.png") no-repeat center;
+}
+
+.job h3 {
+    color: white;
+    position: absolute; 
+    bottom: 30px;
+    left: 20px;
+    
+    -webkit-transition: margin-bottom 0.3s; /* Safari */
+    -webkit-transition-timing-function: ease-in-out; /* Safari */
+    transition: margin-bottom 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.jobs a:hover h3 {
+    margin-bottom: 50px;
+}
+
+.job p {
+    color: white;
+    position: absolute; 
+    bottom: 5px;
+    left: 20px;
+
+    -webkit-transition: margin-bottom 0.3s; /* Safari */
+    -webkit-transition-timing-function: ease-in-out; /* Safari */
+    -webkit-transition-delay: 0.1s;
+    transition: margin-bottom 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+}
+.jobs a:hover p {
+    margin-bottom: 35px;
+}
+
+.job > div {
+    display: block;
+    position: absolute; 
+    bottom: 20px;
+    left: 20px;
+    width: 0%;
+    height: 2px;
+    background: transparent;
+    -webkit-transition: width .5s ease, background-color .5s ease;
+    transition: width .5s ease, background-color .5s ease;
+}
+.jobs a:hover div {
+    width: 80%;
+    background: black;
+}
+
+/**********************************
     Images with a title
 */
 
@@ -168,12 +227,12 @@ nav:after{
     text-decoration: none;
     font-size: 17px;
 
-    border: 2px solid transparent;
-    -webkit-transition: border 1s ease;
-    -moz-transition: border 1s ease;
-    -o-transition: border 1s ease;
-    -ms-transition: border 1s ease;
-    transition: border 1s ease; 
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 1s ease;
+    -moz-transition: border-bottom 1s ease;
+    -o-transition: border-bottom 1s ease;
+    -ms-transition: border-bottom 1s ease;
+    transition: border-bottom 1s ease; 
 }
 .topnav a.topnav_links:hover {
     color: #fd5938;

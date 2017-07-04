@@ -1,1 +1,17 @@
-jobs page
+<header class="col-12">
+    <h1>{{ page.introduction }}</h1>
+</header>
+<section class="row jobs">
+    {% for job in page.get_children %}
+        {% if forloop.counter|divisibleby:4 %}</section><section class="row jobs">{% endif %}
+        {% with job=job.specific %}
+        <a href="">
+            <article class="col-4 job">
+                <h3>{{ job.job_title }}</h3>
+                <p>{{ job.job_level.level_description }}</p>
+                <div class="underline"></div>
+            </article>
+        </a>
+        {% endwith %}
+    {% endfor %}
+</section>

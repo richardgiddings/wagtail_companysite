@@ -43,6 +43,12 @@
                     var link = $(this).attr('href');
                     $('#content').load(link);
                 });
+
+                $('.jobs a').click(function(ev) {
+                    ev.preventDefault();
+                    var link = $(this).attr('href');
+                    $('#content').load(link);
+                });
             });
         });
     });

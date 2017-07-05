@@ -1,1 +1,11 @@
-job page
+{% load wagtailcore_tags %}
+
+<header>
+    <h1>{{ page.job_title }}</h1>
+</header>
+<section class="row">
+    <article class="col-12">
+        <h2>{{ page.job_level }}</h2>
+        {{ page.job_description|richtext }}
+    </article>
+</section>

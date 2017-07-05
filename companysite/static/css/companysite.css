@@ -105,8 +105,7 @@ a.email:hover {
     position: relative;
     height: 200px;
     width: 100%;
-    background-color: green;
-    background-image: url("/static/images/bo-play.png") no-repeat center;
+    background: green url("/static/images/bo-play.png") repeat;
 }
 
 .job h3 {
@@ -154,7 +153,7 @@ a.email:hover {
 }
 .jobs a:hover div {
     width: 80%;
-    background: black;
+    background: white;
 }
 
 /**********************************

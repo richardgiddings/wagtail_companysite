@@ -85,20 +85,17 @@ class Client(models.Model):
         return self.client_name
 
 """
-Team Page
+Staff Page
 """
-class TeamPage(Page):
+class StaffPage(Page):
 
     introduction = models.TextField()
 
     content_panels = Page.content_panels + [
         FieldPanel('introduction'),
-        InlinePanel('profiles', label='Staff Profiles')
     ]
 
-class Profile(Orderable):
-
-    team_page = ParentalKey(TeamPage, related_name='profiles')
+class StaffProfile(Page):
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -109,7 +106,7 @@ class Profile(Orderable):
     )
     short_bio = RichTextField(blank=True)
 
-    panels = [
+    content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
                 FieldPanel('first_name'),

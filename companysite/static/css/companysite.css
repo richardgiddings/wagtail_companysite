@@ -81,6 +81,54 @@ a.email:hover {
 }
 
 /**********************************
+    Team/staff
+*/
+
+.staff-name {
+    color: #23b0b0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.img-holder {
+    background: #23b0b0;
+    display: inline-block;
+}
+
+.img-holder img {
+    opacity: 1;
+    transition: opacity 0.25s ease 0s;
+}
+.img-holder img:hover {
+    opacity: 0.5;
+}
+
+.profile-image {
+    margin: 0 0 30px
+}
+
+@media (min-width: 768px) {
+    .profile-image {
+        width: 50%;
+        float: left;
+        margin: 60px 0
+    }
+}
+
+.profile-bio {
+    margin: 0 0 30px
+}
+
+@media (min-width: 768px) {
+    .profile-bio {
+        width: 50%;
+        float: left;
+        margin: 30px 0;
+        padding: 50px
+    }
+}
+
+/**********************************
     Work page
 */
 .visit .visit-button {

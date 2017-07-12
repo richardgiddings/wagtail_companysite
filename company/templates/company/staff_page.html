@@ -1,0 +1,19 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<header class="col-12">
+    <h1>{{ page.introduction }}</h1>
+</header>
+<section class="row profiles">
+    {% for profile in page.get_children %}
+    {% if forloop.counter|divisibleby:4 %}</section><section class="row">{% endif %}
+        {% with profile=profile.specific %}
+        <article class="col-4">
+            <div class="img-holder">
+                <a href="{% pageurl profile %}">{% image profile.image fill-400x400 %}</a>
+            </div>
+            <h3 class="staff-name">{{ profile.first_name }}&nbsp;{{ profile.last_name }}</h3>
+            <div>{{ profile.job_title }}</div>
+        </article>
+    {% endwith %}
+    {% endfor %}
+</section>

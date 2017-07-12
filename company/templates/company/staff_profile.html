@@ -1,0 +1,14 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<section class="row">
+    <article class="col-12 clearfix">
+        <div class="profile-image">
+            {% image page.image fill-900x900 %}
+        </div>
+        <div class="profile-bio">
+            <h1>{{ page.first_name }}&nbsp;{{ page.last_name }}</h1>
+            <h2>{{ page.job_title }}</h2>
+            {{ page.short_bio|richtext }}
+        </div>
+    </article>
+</section>

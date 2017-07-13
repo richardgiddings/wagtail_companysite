@@ -8,9 +8,11 @@
     {% if forloop.counter|divisibleby:4 %}</section><section class="row">{% endif %}
         {% with profile=profile.specific %}
         <article class="col-4">
-            <div class="img-holder">
-                <a href="{% pageurl profile %}">{% image profile.image fill-400x400 %}</a>
-            </div>
+            <a href="{% pageurl profile %}">
+                <div class="img-holder">
+                    {% image profile.image fill-400x400 %}
+                </div>
+            </a>
             <h3 class="staff-name">{{ profile.first_name }}&nbsp;{{ profile.last_name }}</h3>
             <div>{{ profile.job_title }}</div>
         </article>

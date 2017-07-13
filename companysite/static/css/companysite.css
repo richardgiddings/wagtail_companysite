@@ -91,16 +91,23 @@ a.email:hover {
 }
 
 .img-holder {
-    background: #23b0b0;
+    position: relative;
     display: inline-block;
 }
 
 .img-holder img {
-    opacity: 1;
-    transition: opacity 0.25s ease 0s;
+    display: block;
 }
-.img-holder img:hover {
-    opacity: 0.5;
+
+.img-holder:hover:after {
+    cursor: pointer;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(35, 176, 176, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .profile-image {

@@ -10,6 +10,7 @@ from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel, MultiFieldPanel
 from wagtail.wagtailsnippets.models import register_snippet
+from wagtail.wagtailsearch import index
 
 class HomePage(Page):
     introduction = RichTextField(blank=False)
@@ -71,6 +72,10 @@ class CaseStudyPage(Page):
         StreamFieldPanel('body'),
         FieldPanel('site_url'),
         FieldPanel('client'),
+    ]
+
+    search_fields = Page.search_fields + [
+        index.SearchField('body')
     ]
 
 @register_snippet

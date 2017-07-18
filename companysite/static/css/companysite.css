@@ -36,6 +36,8 @@ main {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
 
 img {
@@ -55,13 +57,59 @@ article {
     width: auto\9; /* ie8 */
 }
 
+/**********************************
+    Footer
+*/
+
 footer {
     color: white;
     background-color: #2b3033;
-    height: 60px;
+    height: 80px;
     padding: 10px;
     text-align: center;
 }
+
+footer .search {
+    text-align: center;
+    margin-top: 10px; 
+}
+
+footer .search form {
+    display: inline-block
+}
+
+footer .search form input[type=text] {
+    border: 0;
+    background: white;
+    border-radius: 3px 0 0 3px;
+    padding: 10px 20px 8px;
+    width: 63%;
+    float: left;
+    font-size: 18px;
+}
+
+footer .search form input[type=text]:focus {
+    outline: none;
+}
+
+@media (min-width: 1025px) {
+    footer .search form input[type=text] {
+        width:auto
+    }
+}
+
+footer .search form input[type=submit] {
+    background: #fd5938;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    float: left;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #fd5938;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 
 /**********************************
     Contact details

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 
-{% block content %}
+{% block navigation %}
 <nav>
     <div class="logo">
         <a href="{% slugurl 'home' %}"><svg xmlns="http://www.w3.org/2000/svg" width="244.2" height="57.1" viewBox="0 0 244.2 57.1">
@@ -10,13 +10,16 @@
 </svg></a>
     </div>
     <div class="topnav" id="menu">
-        {% for child_page in page.get_children %}
-            <a href="{% pageurl child_page %}" class="topnav_links">{{ child_page.title }}</a>
-        {% endfor %}
-        <a href="{% url 'search' %}" class="topnav_links">SEARCH</a>
+        <a href="{% slugurl 'work' %}" class="topnav_links">WORK</a>
+        <a href="{% slugurl 'team' %}" class="topnav_links">TEAM</a>
+        <a href="{% slugurl 'jobs' %}" class="topnav_links">JOBS</a>
+        <a href="{% slugurl 'contact' %}" class="topnav_links">CONTACT</a>
     </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </nav>
+{% endblock %}
+
+{% block content %}
 <main id="content">
     <section class="row">
         <article class="col12">
@@ -24,14 +27,23 @@
         </article>
     </section>
 </main>
+{% endblock %}
+
+{% block footer %}
 <footer class="col12">
-    Some other links e.t.c.
+    <div class="search">
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="query" value="{{ search_query }}" placeholder="Your search">
+            <input type="submit" value="Search">
+        </form>
+    </div>
 </footer>
 {% endblock %}
 
 {% block extra_js %}
 <script type="text/javascript">
     $(document).ready(function() {
+
         $('#menu a').click(function(ev) {
             ev.preventDefault();
             var link = $(this).attr('href');
@@ -39,6 +51,7 @@
             $(this).addClass("active");
             myFunction();
             $('#content').load(link, function() {
+                
                 $('.image a').click(function(ev) {
                     ev.preventDefault();
                     var link = $(this).attr('href');
@@ -57,6 +70,12 @@
                     $('#content').load(link);
                 });
             });
+        });
+
+        $('.search-results a').click(function(ev) {
+            ev.preventDefault();
+            var link = $(this).attr('href');
+            $('#content').load(link);
         });
     });
 </script>

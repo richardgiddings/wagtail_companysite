@@ -222,6 +222,11 @@ a.email:hover {
     transition: margin-bottom 0.3s;
     transition-timing-function: ease-in-out;
 }
+
+.jobs a {
+    text-decoration: none;
+}
+
 .jobs a:hover h3 {
     margin-bottom: 50px;
 }

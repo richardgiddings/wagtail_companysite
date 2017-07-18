@@ -1,0 +1,37 @@
+{% extends "../company/home_page.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+<main id="content">
+    <header class="col-12">
+        <h1>Search</h1>
+    </header>
+
+    {% if search_results %}
+    <section class="row search-results">
+        <article class="col-12">
+            <ul>
+                {% for result in search_results %}
+                    <li>
+                        <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                        {% if result.search_description %}
+                            {{ result.search_description }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+
+            {% if search_results.has_previous %}
+                <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% if search_results.has_next %}
+                <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+            {% endif %}
+        </article>
+    </section>
+    {% elif search_query %}
+        No results found
+    {% endif %}
+</main>
+{% endblock %}

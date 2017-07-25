@@ -327,26 +327,32 @@ nav:after{
     padding-right: 10px;
 }
 
-.topnav a {
+.topnav_links {
     display: inline-block;
+    text-decoration: none;
     color: black;
-    text-align: center;
+    font-size: 17px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 4px;
-    text-decoration: none;
-    font-size: 17px;
-
-    border-bottom: 2px solid transparent;
-    -webkit-transition: border-bottom 1s ease;
-    -moz-transition: border-bottom 1s ease;
-    -o-transition: border-bottom 1s ease;
-    -ms-transition: border-bottom 1s ease;
-    transition: border-bottom 1s ease; 
 }
-.topnav a.topnav_links:hover {
+
+.topnav_links:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+.topnav_links:hover:after {
+    width: 100%;
+    background: #fd5938;
+}
+
+.topnav_links:hover {
+    cursor: pointer;
     color: #fd5938;
-    border-bottom: 1px solid #fd5938;
 }
 
 a.active {
